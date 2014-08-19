@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C1F7A0AD-D9B7-467B-AE62-9AD083F20BE5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Reactive</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C750EB5304B19350B8C22EBD8956B62DF2E51B5A</key>
+		<string>https://github.com/JJJayway/ReactiveSwift.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Reactive.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C750EB5304B19350B8C22EBD8956B62DF2E51B5A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/JJJayway/ReactiveSwift.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C750EB5304B19350B8C22EBD8956B62DF2E51B5A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C750EB5304B19350B8C22EBD8956B62DF2E51B5A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ReactiveSwift</string>
+		</dict>
+	</array>
+</dict>
+</plist>

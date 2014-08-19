@@ -36,7 +36,7 @@ import Dispatch.queue
 
 // MARK: -
 
-/// This maps a struct inside a class to get Hashable and Equatable (used by Splitter), and to avoid a bug in beta 5 (in the definition of Event)
+/// This maps a struct inside a class to get Hashable and Equatable (used by Splitter), and to avoid a bug in beta 6 (in the definition of Event)
 public class Box<T>: Hashable, Equatable {
     public let value: T
     init(_ value: T) {
@@ -58,7 +58,8 @@ public func ==<T>(lhs: Box<T>, rhs: Box<T>) -> Bool {
 // MARK: -
 
 public enum Event<T> {
-    /// A value
+    /// A value.
+    /// Box the value due to an unimplemented feature in beta 6: "unimplemented IR generation feature non-fixed multi-payload enum layout".
     case Value(Box<T>)
     /// Completed without error. This is an ending event: No more events will be pushed out.
     case Completed
@@ -609,7 +610,7 @@ func verify<T: Equatable>(var facit: [T], _ prefix: String = "Verify: ") (sink: 
     }
 }
 
-/// This is used by test4(). The beta 5 compiler has some issues having this inside the function scope.
+/// This is used by test4(). The beta 5 compiler had some issues having this inside the function scope.
 class C {
     struct Static {
         static var innerDone = false
