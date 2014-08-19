@@ -18,7 +18,7 @@ into e.g. a struct having e.g. a name for debugging purposes.
 
 A Terminator sports a single method: `stop()`, which can be used to end the pusher. The
 pusher will push a final Stopped event, release all resources, and terminate. The pusher
-may currently be blocked in a call to `put()`, in which call it will not terminate
+may currently be blocked in a call to `put()`, in which case it will not terminate
 instantly.
 
 A Sink is the standard Swift struct `SinkOf<T>` which holds a single closure, implementing
