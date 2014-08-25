@@ -6,6 +6,11 @@
 //  Copyright (c) 2014 Jayway. All rights reserved.
 //
 
+import Dispatch.queue
+import Foundation.NSDate // To get NSTimeInterval
+import class Foundation.NSError
+
+
 public func map<I,O>(block: I -> O) (sink: TypesIO<I,O>.OutputSink) -> TypesIO<I,O>.InputSink {
     return SinkOf {
         event in

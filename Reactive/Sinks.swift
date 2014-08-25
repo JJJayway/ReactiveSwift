@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Jayway. All rights reserved.
 //
 
+import class Foundation.NSError
+
+
 public func accept<T>(onValue: T -> () = {_ in}, onCompleted: () -> () = {}, onError: (NSError) -> () = {_ in}, onStopped: () -> () = {}, onEnd: () -> () = {}) -> Types<T>.Sink {
     return SinkOf {
         event in

@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 Jayway. All rights reserved.
 //
 
+import Dispatch.queue
+import Foundation.NSDate // To get NSTimeInterval
+
+
 public func emit<T>(value: T) (sink: Types<T>.Sink) -> TerminatorType {
     sink.put(Event.fromValue(value))
     sink.put(.Completed)

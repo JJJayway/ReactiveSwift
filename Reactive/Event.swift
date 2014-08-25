@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Jayway. All rights reserved.
 //
 
+import class Foundation.NSError
+
 
 /// This maps a struct inside a class to get Hashable and Equatable (used by Splitter), and to avoid a bug in beta 6 (in the definition of Event)
 public class Box<T>: Hashable, Equatable {
