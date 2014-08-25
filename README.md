@@ -28,7 +28,7 @@ The struct is a value type, but as it holds a single reference type, it can be p
 
 The Emitter decides whether events are emitted to the sink synchronously or asynchronously.
 
-The `emit(Sequence)(Sink) -> Terminator` function results in a synchronous emit:
+The `emitElements(Sequence)(Sink) -> Terminator` function results in a synchronous emit:
 
 ```swift
   emitElements([1, 3, 5, 7, 9])
@@ -37,7 +37,7 @@ The `emit(Sequence)(Sink) -> Terminator` function results in a synchronous emit:
     .. accept { (v: Int) -> () in println(v) }
 ```
 
-Use `emit(Sequence, onQueue:queue)(Sink) -> Terminator` to emit a sequence asynchronously:
+Use `emitElements(Sequence, onQueue:queue)(Sink) -> Terminator` to emit a sequence asynchronously:
 
 ```swift
 emitElements([1, 3, 5, 7, 9], onQueue: myQueue)
