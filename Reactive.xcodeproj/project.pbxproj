@@ -10,7 +10,25 @@
 		0C95C52119A3695900B14E78 /* Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C95C52019A3695900B14E78 /* Reactive.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C95C52B19A3695900B14E78 /* ReactiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95C52A19A3695900B14E78 /* ReactiveTests.swift */; };
 		0C95C53519A3699100B14E78 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C95C53419A3699100B14E78 /* Reactive.swift */; };
+		0CA32C2519AB18EA00EA405A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA32C2419AB18EA00EA405A /* Event.swift */; };
+		0CA32C2719AB195200EA405A /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA32C2619AB195200EA405A /* Types.swift */; };
+		0CA32C2919AB196B00EA405A /* Terminator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA32C2819AB196B00EA405A /* Terminator.swift */; };
+		0CD03DCC19AB27DC00A56AF2 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD03DCB19AB27DC00A56AF2 /* Operator.swift */; };
+		0CD03DCE19AB287A00A56AF2 /* Emitters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD03DCD19AB287A00A56AF2 /* Emitters.swift */; };
+		0CD03DD019AB28E100A56AF2 /* Sinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD03DCF19AB28E100A56AF2 /* Sinks.swift */; };
+		0CD03DD219AB292A00A56AF2 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD03DD119AB292A00A56AF2 /* Splitter.swift */; };
+		0CD03DD419AB296400A56AF2 /* SinkOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD03DD319AB296400A56AF2 /* SinkOperations.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0CCD3D3619AB4D3A003E32D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C95C51219A3695900B14E78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C95C51A19A3695900B14E78;
+			remoteInfo = Reactive;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C95C51B19A3695900B14E78 /* Reactive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reactive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +40,14 @@
 		0C95C53419A3699100B14E78 /* Reactive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		0C95C53619A369A300B14E78 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		0C95C53719A369A300B14E78 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0CA32C2419AB18EA00EA405A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0CA32C2619AB195200EA405A /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		0CA32C2819AB196B00EA405A /* Terminator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Terminator.swift; sourceTree = "<group>"; };
+		0CD03DCB19AB27DC00A56AF2 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		0CD03DCD19AB287A00A56AF2 /* Emitters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emitters.swift; sourceTree = "<group>"; };
+		0CD03DCF19AB28E100A56AF2 /* Sinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sinks.swift; sourceTree = "<group>"; };
+		0CD03DD119AB292A00A56AF2 /* Splitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Splitter.swift; sourceTree = "<group>"; };
+		0CD03DD319AB296400A56AF2 /* SinkOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinkOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +92,14 @@
 			isa = PBXGroup;
 			children = (
 				0C95C53419A3699100B14E78 /* Reactive.swift */,
+				0CD03DCF19AB28E100A56AF2 /* Sinks.swift */,
+				0CD03DD119AB292A00A56AF2 /* Splitter.swift */,
+				0CD03DD319AB296400A56AF2 /* SinkOperations.swift */,
+				0CD03DCD19AB287A00A56AF2 /* Emitters.swift */,
+				0CD03DCB19AB27DC00A56AF2 /* Operator.swift */,
+				0CA32C2819AB196B00EA405A /* Terminator.swift */,
+				0CA32C2619AB195200EA405A /* Types.swift */,
+				0CA32C2419AB18EA00EA405A /* Event.swift */,
 				0C95C52019A3695900B14E78 /* Reactive.h */,
 				0C95C51E19A3695900B14E78 /* Supporting Files */,
 			);
@@ -140,6 +174,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0CCD3D3719AB4D3A003E32D3 /* PBXTargetDependency */,
 			);
 			name = ReactiveTests;
 			productName = ReactiveTests;
@@ -203,6 +238,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD03DD219AB292A00A56AF2 /* Splitter.swift in Sources */,
+				0CA32C2919AB196B00EA405A /* Terminator.swift in Sources */,
+				0CD03DD419AB296400A56AF2 /* SinkOperations.swift in Sources */,
+				0CA32C2719AB195200EA405A /* Types.swift in Sources */,
+				0CD03DCE19AB287A00A56AF2 /* Emitters.swift in Sources */,
+				0CD03DCC19AB27DC00A56AF2 /* Operator.swift in Sources */,
+				0CA32C2519AB18EA00EA405A /* Event.swift in Sources */,
+				0CD03DD019AB28E100A56AF2 /* Sinks.swift in Sources */,
 				0C95C53519A3699100B14E78 /* Reactive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +259,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0CCD3D3719AB4D3A003E32D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C95C51A19A3695900B14E78 /* Reactive */;
+			targetProxy = 0CCD3D3619AB4D3A003E32D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0C95C52C19A3695900B14E78 /* Debug */ = {
@@ -385,6 +436,7 @@
 				0C95C53019A3695900B14E78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C95C53119A3695900B14E78 /* Build configuration list for PBXNativeTarget "ReactiveTests" */ = {
 			isa = XCConfigurationList;
@@ -393,6 +445,7 @@
 				0C95C53319A3695900B14E78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Jayway. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/NSObjCRuntime.h>
 
 //! Project version number for Reactive.
 FOUNDATION_EXPORT double ReactiveVersionNumber;
