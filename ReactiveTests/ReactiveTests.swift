@@ -10,6 +10,26 @@ import XCTest
 import Reactive
 
 
+// ==== If this is uncommented, the testMergeFilter() test succeeds! ====
+public func emitValue(value: Int) (sink: Types<Int>.Sink) -> TerminatorType {
+    sink.put(Event.fromValue(value))
+    sink.put(.Completed)
+    return BlockTerminator { fatalError("Not terminatable") }
+}
+func mergeFilter(pred: Int -> Bool) -> (sink: Types<Int>.Sink) -> Types<Int>.Sink {
+    return map {
+        value -> Types<Int>.Emitter in
+        if pred(value) {
+            return emitValue(value)
+        } else {
+            return emptyEmitter()
+        }
+        }
+        .. merge
+}
+// ==== If the above lines are uncommented, the testMergeFilter() test succeeds! ====
+
+
 class ArrayVerifier<T: Equatable> {
     let semaphore: dispatch_semaphore_t = dispatch_semaphore_create(0)
     let facit: [T]
@@ -47,6 +67,18 @@ class Verifier<T: Equatable> {
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
         XCTAssert(result! == facit)
     }
+}
+
+func mergeFilter<T>(pred: T -> Bool) -> (sink: Types<T>.Sink) -> Types<T>.Sink {
+    return map {
+        value -> Types<T>.Emitter in
+        if pred(value) {
+            return emitValue(value)
+        } else {
+            return emptyEmitter()
+        }
+        }
+        .. merge
 }
 
 
@@ -123,7 +155,7 @@ class ReactiveTests: XCTestCase {
                 println("C.ping " + s)
             }
             deinit {
-                emit("C.deinit") .. accept { v in println(v) }
+                emitValue("C.deinit") .. accept { v in println(v) }
                 //XCTAssert(Static.innerDone, "innerDone was supposed to be true")
                 if (!Static.innerDone) {
                     // As XCTAssert doesn't work async...
@@ -167,6 +199,14 @@ class ReactiveTests: XCTestCase {
             .. merge
             .. reduce(initial: IntSet()) { (var set, i) in set[i] = (); return set }
             .. map { set in sorted(set.keys) }
+            .. verifier.input
+        verifier.wait()
+    }
+    
+    func testMergeFilter() {
+        let verifier = ArrayVerifier(facit: [2, 4, 6, 8])
+        emitElements([1, 2, 3, 4, 5, 6, 7, 8, 9])
+            .. mergeFilter { $0 % 2 == 0 }
             .. verifier.input
         verifier.wait()
     }

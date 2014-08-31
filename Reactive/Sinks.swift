@@ -28,6 +28,15 @@ public func accept<T>(onValue: T -> () = {_ in}, onCompleted: () -> () = {}, onE
     }
 }
 
+public func acceptValue<T>(onValue: T -> ()) -> Types<T>.Sink {
+    return SinkOf {
+        event in
+        if let value = event.value {
+            onValue(value)
+        }
+    }
+}
+
 /// Store all emitted values in an array, and pass it to the callback when the emitter ends.
 public func toArray<T>(callback: [T] -> ()) -> Types<T>.Sink {
     var result: [T] = []

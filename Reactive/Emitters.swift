@@ -10,7 +10,12 @@ import Dispatch.queue
 import Foundation.NSDate // To get NSTimeInterval
 
 
-public func emit<T>(value: T) (sink: Types<T>.Sink) -> TerminatorType {
+public func emptyEmitter<T>() (sink: Types<T>.Sink) -> TerminatorType {
+    sink.put(.Completed)
+    return BlockTerminator { fatalError("Not terminatable") }
+}
+
+public func emitValue<T>(value: T) (sink: Types<T>.Sink) -> TerminatorType {
     sink.put(Event.fromValue(value))
     sink.put(.Completed)
     return BlockTerminator { fatalError("Not terminatable") }

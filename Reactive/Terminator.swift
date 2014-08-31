@@ -11,16 +11,18 @@ public protocol TerminatorType {
     mutating func stop()
 }
 
-public struct BasicTerminator: TerminatorType {
+public class BasicTerminator: TerminatorType {
     public var stopped = false
-    public mutating func stop() {
+    public func stop() {
         stopped = true
+    }
+    public init() {
     }
 }
 
 public struct BlockTerminator: TerminatorType {
     let block: () -> ()
-    init(block: () -> ()) {
+    public init(block: () -> ()) {
         self.block = block
     }
     public mutating func stop() {

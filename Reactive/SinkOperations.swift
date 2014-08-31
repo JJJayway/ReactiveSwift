@@ -109,7 +109,7 @@ public func concat<T>(var sink: Types<T>.Sink) -> Types<T>.SinkOfEmitters {
 /// If some emitter (including the emitter of emitters) sends the .Error event, or the .Stopped event, that event will be forwarded and event processing ends.
 /// Other than that, event processing continues until all emitters (including the emitter of emitters) have completed.
 public func merge<T>(var sink: Types<T>.Sink) -> Types<T>.SinkOfEmitters {
-    let queue = dispatch_queue_create("Reactive.merge", DISPATCH_QUEUE_SERIAL) // Serialize emites to the sink
+    let queue = dispatch_queue_create("Reactive.merge", DISPATCH_QUEUE_SERIAL) // Serialize emits to the sink
     var emitterCount = 0
     var mainEmitterHasEnded = false
     var valid = true // Becomes false if some emitter fails or stops
@@ -190,6 +190,15 @@ public func intercept<T>(onValue: T -> () = {_ in}, onCompleted: () -> () = {}, 
         case .Stopped:
             onStopped()
             onEnd()
+        }
+    }
+}
+
+public func valueIntercept<T>(onValue: T -> ()) -> (sink: Types<T>.Sink) -> Types<T>.Sink {
+    return eventIntercept {
+        event in
+        if let value = event.value {
+            onValue(value)
         }
     }
 }
